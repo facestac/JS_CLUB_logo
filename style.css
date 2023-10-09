@@ -1,0 +1,142 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.field {
+    display: grid;
+    gap: 50px;
+    grid-template: 1fr / 4fr 2fr;
+
+    /* transition: 0s 9999999s; */
+
+}
+
+.two {
+    display: grid;
+    grid-template: repeat(5, 50px) / repeat(4, 50px);
+
+
+    .row1 {
+        grid-area: 1 / 1 / 1 / 4;
+        border-radius: 10px 10px 0 10px;
+    }
+    
+    .row2 {
+        grid-area: 2 / 4 / 2 / 5;
+        border-radius: 0 10px 10px 0;
+    }
+    
+    .row3 {
+        grid-area: 3 / 2 / 3 / 4;
+        border-radius: 10px 0 10px 0;
+    }
+    
+    .row4 {
+        grid-area: 4 / 1 / 4 / 2;
+        border-radius: 10px 0 0 10px;
+    }
+    
+    .row5 {
+        grid-area: 5 / 2 / 5 / 5;
+        border-radius: 0 10px 10px 10px;
+    }
+
+    .text-two {
+        text-align: center;
+        padding: 8px;
+        font: bold 28px Sans-Serif;
+        color: rgb(255, 255, 255);   
+        transform: scale(0);            
+    }
+    
+    .text-two:after  {
+        content: "CLUB"; 
+    } 
+}
+
+  
+.one {
+    display: grid;
+    grid-template: repeat(5, 50px) / repeat(2, 50px);
+    
+    .col1 {
+        grid-area: 1 / 1 / 1 / 2;
+        border-radius: 10px 10px 0 10px;
+    }
+    
+    .col2 {
+        grid-area: 2 / 2 / 6 / 2;
+        border-radius: 0 10px 10px 10px;
+        writing-mode: vertical-rl;
+       
+    }
+
+    .text-one {
+        text-align: center;
+        padding: 3px 8px;
+        font: bold 28px Sans-Serif;
+        color: rgb(255, 255, 255);   
+        text-orientation: upright;
+        
+    }
+    
+    .text-one:after  {
+        content: "SCHOOL"; 
+    } 
+}
+
+
+.done {
+    background-color: grey;
+}
+
+.wrapper:hover {
+    transition: transform 2s linear;
+    transition-timing-function: cubic-bezier(.3,.39,.21,.67);
+    transform: rotateY(180deg);
+    
+    
+    .one {
+        transition: transform 1.6s linear;
+        transform: rotate(180deg);
+        
+        .col2 {
+            padding: 32px 8px; 
+            transform: rotateY(180deg);               
+        }        
+
+        .text-one {
+            transition: transform 0.5s linear;
+            transform: scale(0);
+        }
+
+    }
+
+    .text-two {
+        transition: transform 0.5s linear;
+        transform: scale(1) rotateY(180deg);
+        transition-delay: 1s;
+    }   
+  }
+
+  .wrapper:not(:hover) {
+    transition: transform 2s linear;
+    transition-timing-function: cubic-bezier(.3,.39,.21,.67);    
+    
+    .one {
+        transition: transform 1.6s linear;             
+
+        .text-one {
+            transition: transform 0.5s linear;
+            transition-delay: 1s;
+        }
+
+    }
+
+    .text-two {
+        transition: transform 0.5s linear;
+    }
+  }
+
+  
