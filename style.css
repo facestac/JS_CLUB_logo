@@ -103,8 +103,9 @@
         
         .col2 {
             padding: 32px 8px; 
-            transform: rotateY(180deg);               
-        }        
+        }     
+        
+        
 
         .text-one {
             transition: transform 0.5s linear;
